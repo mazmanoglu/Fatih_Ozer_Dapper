@@ -1,0 +1,54 @@
+﻿
+
+select * from Campussen
+select * from Docenten
+
+
+Create Proc spGetAllCampusses
+As
+Begin
+	select * from Campussen
+End
+Go
+
+exec spGetAllCampusses
+
+
+
+Create Proc spGetAllDocents
+As
+Begin
+	select * from Docenten
+End
+Go
+
+exec spGetAllDocents
+
+
+Create proc spAddNewDocent
+@Voornaam nvarchar(50),
+@Familienaam nvarchar(50),
+@Wedde decimal(10,2),
+@CampusNr int
+
+as
+Begin
+	Insert into Docenten(Voornaam, Familienaam, Wedde, CampusNr)
+	values (@Voornaam, @Familienaam, @Wedde, @CampusNr)
+End
+go
+
+
+Create proc spDeleteDocent
+@DocentNr int,
+@Voornaam nvarchar(50),
+@Familienaam nvarchar(50),
+@Wedde decimal(10,2),
+@CampusNr int
+
+as
+Begin
+	delete from Docenten
+	where DocentNr=@DocentNr
+End
+go
