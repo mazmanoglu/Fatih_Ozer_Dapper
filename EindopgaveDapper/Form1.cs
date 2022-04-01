@@ -30,8 +30,9 @@ namespace EindopgaveDapper
 
         }
         private void btnRemove_Click(object sender, EventArgs e)
-        {
+        {         
 
+            SelectedListOfDocents();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -43,23 +44,37 @@ namespace EindopgaveDapper
             newDocent.CampusNr = cmbSelectCampus.SelectedIndex + 1;
 
             opleidingenServices.AddNewDocent(newDocent);
-            lstSelectDocent.DataSource = opleidingenServices.GetDocents();
+            SelectedListOfDocents();
         }
 
         private void lstSelectDocent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtFirstName.Text = lstSelectDocent.SelectedItem.ToString();
-            txtLastName.Text = lstSelectDocent.SelectedItem.ToString();
+             IDocent docent = lstSelectDocent.SelectedItem as Docent;
+            //IDocent docent = (Docent)lstSelectDocent.SelectedItem;
 
-            lblDetailsFirstName.Text = "First Name: " + txtFirstName.Text.ToString();
-            lblDetailsLastName.Text = "Last Name: " + txtLastName.Text.ToString();
-            lblDetailsWedde.Text = "Wedde: " + txtWedde.Text.ToString();
+            //if (docent != null)
+            //{
+            //    txtFirstName.Text = docent.Voornaam;
+            //    txtLastName.Text = docent.Familienaam;
+            //    txtWedde.Text = docent.Wedde.ToString();
+            //}
+
+            lblDetailsFirstName.Text = "First Name: " + docent.Voornaam;
+            lblDetailsLastName.Text = "Last Name: " + docent.Familienaam;
+            lblDetailsWedde.Text = "Wedde: " + docent.Wedde;
+            btnRemove.Text = $"Delete {docent.Voornaam} {docent.Familienaam} ?";
+
         }
 
         private void cmbSelectCampus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SelectedListOfDocents();
+        }
+
+        private void SelectedListOfDocents()
+        {
             var selectedCampus = cmbSelectCampus.SelectedIndex + 1;
-            var docents = opleidingenServices.GetDocents().Where(x => x.CampusNr== selectedCampus).ToList();
+            var docents = opleidingenServices.GetDocents().Where(x => x.CampusNr == selectedCampus).ToList();
             lstSelectDocent.DataSource = docents;
         }
     }

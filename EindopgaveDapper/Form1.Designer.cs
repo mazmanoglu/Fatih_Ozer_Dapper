@@ -173,7 +173,7 @@
             // 
             this.lblDetailsOfDocent.AutoSize = true;
             this.lblDetailsOfDocent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetailsOfDocent.Location = new System.Drawing.Point(491, 91);
+            this.lblDetailsOfDocent.Location = new System.Drawing.Point(476, 81);
             this.lblDetailsOfDocent.Name = "lblDetailsOfDocent";
             this.lblDetailsOfDocent.Size = new System.Drawing.Size(185, 20);
             this.lblDetailsOfDocent.TabIndex = 13;
@@ -182,7 +182,7 @@
             // lblDetailsFirstName
             // 
             this.lblDetailsFirstName.AutoSize = true;
-            this.lblDetailsFirstName.Location = new System.Drawing.Point(491, 143);
+            this.lblDetailsFirstName.Location = new System.Drawing.Point(477, 131);
             this.lblDetailsFirstName.Name = "lblDetailsFirstName";
             this.lblDetailsFirstName.Size = new System.Drawing.Size(78, 16);
             this.lblDetailsFirstName.TabIndex = 15;
@@ -191,7 +191,7 @@
             // lblDetailsLastName
             // 
             this.lblDetailsLastName.AutoSize = true;
-            this.lblDetailsLastName.Location = new System.Drawing.Point(491, 186);
+            this.lblDetailsLastName.Location = new System.Drawing.Point(477, 169);
             this.lblDetailsLastName.Name = "lblDetailsLastName";
             this.lblDetailsLastName.Size = new System.Drawing.Size(78, 16);
             this.lblDetailsLastName.TabIndex = 16;
@@ -200,7 +200,7 @@
             // lblDetailsWedde
             // 
             this.lblDetailsWedde.AutoSize = true;
-            this.lblDetailsWedde.Location = new System.Drawing.Point(491, 231);
+            this.lblDetailsWedde.Location = new System.Drawing.Point(477, 208);
             this.lblDetailsWedde.Name = "lblDetailsWedde";
             this.lblDetailsWedde.Size = new System.Drawing.Size(58, 16);
             this.lblDetailsWedde.TabIndex = 17;
@@ -209,11 +209,11 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(495, 277);
+            this.btnRemove.Location = new System.Drawing.Point(480, 245);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(228, 36);
+            this.btnRemove.Size = new System.Drawing.Size(314, 36);
             this.btnRemove.TabIndex = 18;
-            this.btnRemove.Text = "Remove";
+            this.btnRemove.Text = "Delete";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 

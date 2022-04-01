@@ -29,7 +29,6 @@ namespace DapperLibrary
                 return docents;
             }
         }
-
         public void AddNewDocent(IDocent docent)
         {
             DynamicParameters param = new DynamicParameters();
@@ -45,9 +44,12 @@ namespace DapperLibrary
         }
         public void DeleteDocent(IDocent docent)
         {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@DocentNr", docent.DocentNr) ;
             using (IDbConnection connection = new SqlConnection(OpleidingenDbManager.GetConnection("Opleidingen")))
             {
-                connection.Execute("spDeleteDocent", commandType: CommandType.StoredProcedure);
+                //connection.Execute("spDeleteDocent", commandType: CommandType.StoredProcedure);
+                connection.Query<IDocent>("spDeleteDocent", param, commandType: CommandType.StoredProcedure).ToList();
             }
         }
     }
