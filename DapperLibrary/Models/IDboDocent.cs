@@ -1,11 +1,11 @@
-﻿namespace DapperLibrary.Interfaces
+﻿namespace DapperLibrary.Models
 {
-    public interface IDocent
+    public interface IDboDocent
     {
-        int CampusNr { get; set; }
+        Campus CampusNr { get; set; }
         int DocentNr { get; set; }
-        string Voornaam { get; set; }
         string Familienaam { get; set; }
+        string Voornaam { get; set; }
         decimal Wedde { get; set; }
 
         string ToString();

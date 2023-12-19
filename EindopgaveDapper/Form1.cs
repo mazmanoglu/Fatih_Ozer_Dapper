@@ -30,8 +30,9 @@ namespace EindopgaveDapper
 
         }
         private void btnRemove_Click(object sender, EventArgs e)
-        {         
-
+        {
+            IDocent docent = lstSelectDocent.SelectedItem as Docent;
+            opleidingenServices.DeleteDocent(docent);
             SelectedListOfDocents();
         }
 
